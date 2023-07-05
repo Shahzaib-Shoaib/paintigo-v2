@@ -73,11 +73,12 @@ const FeatureCarousel: React.FC<Props> = ({
         pagination={{
           clickable: true,
         }}
+        
         navigation={false}
         paginationVariant="circle"
         prevActivateId="featured-carousel-button-prev"
         nextActivateId="featured-carousel-button-next"
-        className={"rounded-md border border-black/10 py-5 sm:pb-[1.5rem] "}
+        className={"rounded-md border border-black/10 py-[2.5rem] sm:pb-[1.5rem] "}
       >
         <Swiper>
           {data?.map((item) => (
