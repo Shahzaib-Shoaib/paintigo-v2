@@ -22,7 +22,7 @@ export const ancientHeroBanner = [
     slug: "",
     image: {
       mobile: {
-        url: "/assets/images/banner/mob-2.jpg",
+        url: "/assets/images/banner/mob-3.jpg",
         width: 1000,
         height: 1000,
       },
@@ -33,21 +33,21 @@ export const ancientHeroBanner = [
       },
     },
   },
-  //   {
-  //     id: 3,
-  //     title: "Winter Collection of Kid Items",
-  //     slug: "winter-collection",
-  //     image: {
-  //       mobile: {
-  //         url: "/assets/images/banner/ancient/hero-banner-mobile-3.png",
-  //         width: 375,
-  //         height: 220,
-  //       },
-  //       desktop: {
-  //         url: "/assets/images/banner/ancient/hero-banner-3.jpg",
-  //         width: 1920,
-  //         height: 900,
-  //       },
-  //     },
-  //   },
+  {
+    id: 3,
+    title: "Banner-3",
+    slug: "",
+    image: {
+      mobile: {
+        url: "/assets/images/banner/mob-2.jpg",
+        width: 1000,
+        height: 1000,
+      },
+      desktop: {
+        url: "/assets/images/banner/desktop-1.png",
+        width: 1900,
+        height: 800,
+      },
+    },
+  },
 ];

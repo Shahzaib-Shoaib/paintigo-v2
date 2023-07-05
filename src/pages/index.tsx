@@ -17,6 +17,7 @@ import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import LogoWhite from "@components/ui/logo-white";
 import { ancientHeroBanner } from "@framework/static/banner";
+import Loader from "@components/loaders/loader";
 
 const TestimonialCarousel = dynamic(
   () => import("@containers/testimonial-carousel"),
@@ -28,12 +29,7 @@ const VideoPlayer = dynamic(() => import("@components/common/video-player"), {
   ssr: false,
 });
 const HeroSlider = dynamic(() => import("@containers/hero-slider"), {
-  loading: () => (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-white bg-opacity-100 flex-col">
-      <LogoWhite />
-      <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#262626]"></div>
-    </div>
-  ),
+  loading: () => <Loader />,
   ssr: false,
 });
 
