@@ -17,8 +17,8 @@ const LogoWhite: React.FC<React.AnchorHTMLAttributes<{}>> = ({
       <Image
         src={siteSettings.logo.whiteurl}
         alt={siteSettings.logo.alt}
-        height={150}
-        width={150}
+        height={250}
+        width={250}
         loading="eager"
       />
     </Link>

@@ -24,6 +24,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { ManagedUIContext } from "@contexts/ui.context";
 import { getDirection } from "@utils/get-direction";
 import { appWithTranslation } from "next-i18next";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { useRef } from "react";
 
 type Props = {
   children?: React.ReactNode;
@@ -32,6 +34,10 @@ type Props = {
 const Noop: React.FC<Props> = ({ children }) => <>{children}</>;
 
 const CustomApp = ({ Component, pageProps, router }: AppProps) => {
+  const queryClientRef = useRef<any>();
+  if (!queryClientRef.current) {
+    queryClientRef.current = new QueryClient();
+  }
   const dir = getDirection(router.locale);
   useEffect(() => {
     document.documentElement.dir = dir;
@@ -42,13 +48,15 @@ const CustomApp = ({ Component, pageProps, router }: AppProps) => {
   }, []);
   return (
     <>
-      <ManagedUIContext>
-        <Layout pageProps={pageProps} language={router.locale}>
-          <Component {...pageProps} language={router.locale} />
-          <Analytics />
-        </Layout>
-        <ManagedModal />
-      </ManagedUIContext>
+      <QueryClientProvider client={queryClientRef.current}>
+        <ManagedUIContext>
+          <Layout pageProps={pageProps} language={router.locale}>
+            <Component {...pageProps} language={router.locale} />
+            <Analytics />
+          </Layout>
+          <ManagedModal />
+        </ManagedUIContext>
+      </QueryClientProvider>
     </>
   );
 };

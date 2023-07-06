@@ -63,7 +63,7 @@ const breakpoints = {
 };
 
 const FeatureCarousel: React.FC<Props> = ({
-  className = "mb-7 md:mb-10 bg-white  ",
+  className = "mb-7 md:mb-10 bg-[#262626]  ",
 }) => {
   return (
     <div className={` ${className}`}>
@@ -73,7 +73,6 @@ const FeatureCarousel: React.FC<Props> = ({
         pagination={{
           clickable: true,
         }}
-        
         navigation={false}
         paginationVariant="circle"
         prevActivateId="featured-carousel-button-prev"

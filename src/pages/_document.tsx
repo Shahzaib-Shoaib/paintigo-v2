@@ -61,7 +61,7 @@ export default class CustomDocument extends Document {
             strategy="beforeInteractive"
           ></Script>
         </Head>
-        <body className="font-poppins">
+        <body>
           <noscript
             dangerouslySetInnerHTML={{
               __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBP463R"

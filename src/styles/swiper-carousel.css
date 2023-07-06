@@ -20,7 +20,7 @@
 }
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
-  color: white;
+  color:#262626;
   display: block;
 }
 .carouselWrapper .swiper-button-disabled {
@@ -36,14 +36,14 @@
   height: 8px;
   border: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  background-color: #262626;
+  background-color: #fff;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
 .carouselWrapper .swiper .swiper-pagination-bullets {
   bottom: 20px;
-  display: none;
+  display:none;
 }
 .carouselWrapper
   .swiper
@@ -54,7 +54,7 @@
 }
 @media screen and (min-width: 480px) {
   .carouselWrapper .swiper .swiper-pagination-bullets {
-    display: none;
+    display:none;
   }
   .carouselWrapper
     .swiper
@@ -111,7 +111,7 @@
   .swiper
   .swiper-pagination-bullets
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: black;
+  background-color: #fff;
   opacity: 1;
   transform: scale(1);
 }

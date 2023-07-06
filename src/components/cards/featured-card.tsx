@@ -28,14 +28,12 @@ const FeaturedCard: React.FC<Props> = ({ item, className }) => {
           className
         )}
       >
-        <div className="flex flex-shrink-0 items-center justify-center text-[20px] text-black">
+        <div className="flex flex-shrink-0 items-center justify-center text-[20px]">
           {icon}
         </div>
         <div className="ps-4">
-          <span className="text-[15px] font-medium text-black ">
-            {t(title)}
-          </span>
-          <p className="text-black">{t(description)}</p>
+          <span className="text-[15px] font-medium text-white ">{t(title)}</span>
+          <Text>{t(description)}</Text>
         </div>
       </div>
     </Link>

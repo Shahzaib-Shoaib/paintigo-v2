@@ -6,18 +6,18 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
 import CollectionBlock from "@containers/collection-block";
 import { collectionData as collection } from "@framework/static/collection";
+import { ancientHeroBanner } from "@framework/static/banner";
 import Container from "@components/ui/container";
 import Divider from "@components/ui/divider";
 import { useUI } from "@contexts/ui.context";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Subscription from "@components/common/subscription";
 import { getUsersCountry } from "@components/common/countrydeterminer";
 import DualGridSection from "@components/common/dual-grid-section";
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
+import Logo from "@components/ui/logo";
 import LogoWhite from "@components/ui/logo-white";
-import { ancientHeroBanner } from "@framework/static/banner";
-import Loader from "@components/loaders/loader";
 
 const TestimonialCarousel = dynamic(
   () => import("@containers/testimonial-carousel"),
@@ -29,7 +29,13 @@ const VideoPlayer = dynamic(() => import("@components/common/video-player"), {
   ssr: false,
 });
 const HeroSlider = dynamic(() => import("@containers/hero-slider"), {
-  loading: () => <Loader />,
+  loading: () => (
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-white bg-opacity-100 flex-col">
+      <LogoWhite />
+      <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#262626]"></div>
+    </div>
+  ),
+
   ssr: false,
 });
 
@@ -101,9 +107,14 @@ export default function Home({ products }: any) {
           },
         ]}
       />
-      <Container>
-        <HeroSlider data={ancientHeroBanner} buttonGroupClassName="hidden" />
-      </Container>
+      <HeroSlider
+        data={ancientHeroBanner}
+        variantRounded="default"
+        variant="fullWidth"
+        className={sectionCommonStyle}
+        buttonGroupClassName="hidden"
+      />
+
       <FeatureCarousel />
       <ProductList products={products} />
       <Divider />

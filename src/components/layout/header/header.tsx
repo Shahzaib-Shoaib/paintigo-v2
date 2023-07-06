@@ -10,7 +10,6 @@ import { useContext } from "react";
 import { CartContext } from "@contexts/shopContext";
 import CartIcon from "@components/icons/cart-icon";
 import LanguageSwitcher from "@components/ui/language-switcher";
-import LogoWhite from "@components/ui/logo-white";
 
 type DivElementRef = React.MutableRefObject<HTMLDivElement>;
 const { site_header } = siteSettings;
@@ -50,7 +49,7 @@ const Header: React.FC = () => {
       ref={siteHeaderRef}
       className="w-full h-16 sm:h-20 lg:h-24 relative z-20"
     >
-      <div className="innerSticky text-black  fixed bg-white w-full h-16 sm:h-20 lg:h-24 z-20 ps-4 md:ps-0 lg:ps-6 pe-4 lg:pe-6 transition duration-200 ease-in-out">
+      <div className="innerSticky text-white body-font fixed bg-[#262626] w-full h-16 sm:h-20 lg:h-24 z-20 ps-4 md:ps-0 lg:ps-6 pe-4 lg:pe-6 transition duration-200 ease-in-out">
         <div className="flex items-center justify-center mx-auto max-w-[1920px] h-full w-full">
           <button
             aria-label="Menu"
@@ -63,7 +62,7 @@ const Header: React.FC = () => {
               <span className="bar" />
             </span>
           </button>
-          <LogoWhite />
+          <Logo />
 
           <HeaderMenu
             data={site_header.menu}
@@ -81,6 +80,21 @@ const Header: React.FC = () => {
             >
               <SearchIcon />
             </button>
+            {/* <div className="-mt-0.5 flex-shrink-0">
+              <AuthMenu
+                isAuthorized={isAuthorized}
+                href={ROUTES.ACCOUNT}
+                className="text-sm xl:text-base text-heading font-semibold"
+                btnProps={{
+                  className:
+                    "text-sm xl:text-base text-heading font-semibold focus:outline-none",
+                  children: t("text-sign-in"),
+                  onClick: handleLogin,
+                }}
+              >
+                {t("text-account")}
+              </AuthMenu>
+            </div> */}
             <button
               className="flex items-center justify-center flex-shrink-0 h-auto relative focus:outline-none transform"
               onClick={() => setCartOpen(!cartOpen)}
