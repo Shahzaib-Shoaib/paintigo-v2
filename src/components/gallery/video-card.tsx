@@ -11,8 +11,15 @@ const VideoCard = ({ video }: any) => {
     <Link legacyBehavior href={`${ROUTES.GALLERY}/${excerpt}/${handle}`}>
       <div className="group">
         <div className="bg-white border border-gray-200 rounded-lg shadow-product ">
-          <div className="xl:h-[510px] h-auto">
+          <div className="h-auto">
             <img className="rounded-t-lg" src={url} alt={altText} />
+            {/* <Image
+              src={url}
+              alt={altText}
+              width={400}
+              height={250}
+              className=""
+            /> */}
           </div>
           <div className="p-5">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 h-36 ">
